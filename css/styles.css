@@ -1023,3 +1023,9 @@ section[id], .contact-form__input, .contact-form__textarea, [data-faq-item]{
 
 /* <picture> wrappers (webp + raster fallback) must not affect layout — img lays out as if picture weren't there */
 picture{ display:contents; }
+
+/* Galleries: uniform grid (captions removed in markup) — calm, premium */
+.portfolio__grid--editorial{ grid-auto-flow:row; }
+.portfolio__grid--editorial .portfolio-tile--wide,
+.portfolio__grid--editorial .portfolio-tile--tall{ grid-column:auto; }
+.portfolio__grid--editorial .portfolio-tile .media{ aspect-ratio:4/5 !important; }

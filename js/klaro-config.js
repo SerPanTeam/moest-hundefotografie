@@ -30,22 +30,24 @@ window.klaroConfig = {
   acceptAll: true,
   hideDeclineAll: false,
   lang: 'de',
+  privacyPolicy: { default: 'datenschutz.html' },
   translations: {
     de: {
       consentModal: {
         title: 'Datenschutz-Einstellungen',
         description:
-          'Wir setzen optionale Dienste ein, die personenbezogene Daten verarbeiten (z. B. zur Anzeige der Karte sowie für Statistik und Marketing). Sie entscheiden, was Sie zulassen.',
+          'Hier können Sie auswählen, welche optionalen Dienste wir verwenden dürfen. Notwendige Funktionen sind für den Betrieb der Website erforderlich und immer aktiv. Weitere Informationen finden Sie in unserer {privacyPolicy}.',
       },
       consentNotice: {
         description:
-          'Wir verwenden optionale Dienste (Google Maps, Statistik, Marketing). {purposes} – Ihre Wahl ist frei und jederzeit widerrufbar.',
+          'Diese Website verwendet Cookies und externe Dienste. Einige sind notwendig, andere helfen uns, diese Website und Ihre Erfahrung zu verbessern. Weitere Informationen in unserer {privacyPolicy}.',
         learnMore: 'Einstellungen',
       },
       acceptAll: 'Alle akzeptieren',
       acceptSelected: 'Auswahl speichern',
       decline: 'Ablehnen',
       ok: 'Akzeptieren',
+      privacyPolicy: { name: 'Datenschutzerklärung' },
       purposes: { functional: 'Karte', analytics: 'Statistik', marketing: 'Marketing' },
     },
   },
