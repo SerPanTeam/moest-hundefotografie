@@ -1,0 +1,50 @@
+/* Klaro — Noir/Gold-Theme (Maren Möst). NACH klaro.css laden. Überschreibt das Default-Theme. */
+
+/* Banner unten + Einstellungen-Modal: tiefes Schwarz, creme Text */
+.klaro .cookie-notice,
+.klaro .cookie-modal .cm-modal,
+.klaro .cookie-modal {
+  background: #141210 !important;
+  color: #ece6da !important;
+  font-family: "Montserrat", Arial, sans-serif !important;
+}
+.klaro .cookie-notice { border-top: 1px solid rgba(201,169,106,.30) !important; }
+.klaro .cookie-modal .cm-modal { border: 1px solid rgba(201,169,106,.30) !important; }
+.klaro .cookie-notice .cn-body,
+.klaro .cookie-notice p,
+.klaro .cookie-modal p,
+.klaro .cookie-modal .cm-body { color: #cfc7b8 !important; }
+.klaro .cookie-notice h1, .klaro .cookie-modal h1,
+.klaro .cookie-modal .title { color: #ece6da !important; }
+.klaro a, .klaro .cm-link,
+.klaro .cookie-notice a, .klaro .cookie-modal a { color: #c9a96a !important; }
+
+/* Kontextueller Platzhalter (Google-Maps-Stelle) */
+.klaro .context-notice {
+  background: #141210 !important;
+  color: #ece6da !important;
+  border: 1px solid rgba(201,169,106,.30) !important;
+}
+.klaro .context-notice p { color: #cfc7b8 !important; }
+
+/* Sekundär-/Ablehnen-Buttons: dezenter Umriss */
+.klaro .cm-btn {
+  background: transparent !important;
+  color: #ece6da !important;
+  border: 1px solid rgba(236,230,218,.35) !important;
+}
+.klaro .cm-btn:hover { border-color: rgba(201,169,106,.6) !important; }
+
+/* Akzeptieren / Erfolg: Champagner-Gold (höhere Spezifität gewinnt) */
+.klaro .cm-btn.cm-btn-success,
+.klaro .context-notice .cm-btn.cm-btn-success {
+  background: #c9a96a !important;
+  color: #15110a !important;
+  border: 1px solid #c9a96a !important;
+}
+.klaro .cm-btn.cm-btn-success:hover,
+.klaro .context-notice .cm-btn.cm-btn-success:hover { background: #d8bd86 !important; }
+
+/* Powered-by gedämpft */
+.klaro .cookie-notice .cm-powered-by a,
+.klaro .cookie-modal .cm-powered-by a { color: #857d70 !important; }
