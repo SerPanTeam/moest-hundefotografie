@@ -69,6 +69,8 @@
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      var hp = form.querySelector("[data-hp]");
+      if (hp && hp.value) { return; } // Honeypot: Bot erkannt -> still verwerfen
       if (!form.checkValidity()) { form.reportValidity(); return; }
       var note = form.querySelector("[data-form-success]");
       if (note) note.hidden = false;
