@@ -8,7 +8,17 @@
   color: #ece6da !important;
   font-family: "Montserrat", Arial, sans-serif !important;
 }
-.klaro .cookie-notice { border-top: 1px solid rgba(201,169,106,.30) !important; }
+/* Cookie-Notice als kompakte Karte UNTEN LINKS (nicht über die volle Breite) */
+.klaro .cookie-notice{
+  position:fixed !important; left:clamp(16px,2.5vw,28px) !important; right:auto !important;
+  bottom:clamp(16px,2.5vw,28px) !important; top:auto !important;
+  width:min(420px, calc(100vw - 32px)) !important; max-width:420px !important;
+  margin:0 !important; padding:22px 22px 18px !important;
+  border:1px solid rgba(201,169,106,.30) !important; border-radius:8px !important;
+  box-shadow:0 28px 80px rgba(0,0,0,.62) !important;
+}
+.klaro .cookie-notice .cn-body{ margin:0 0 14px !important; padding:0 !important; }
+.klaro .cookie-notice .cn-ok{ display:flex !important; flex-wrap:wrap !important; align-items:center !important; gap:10px !important; padding:0 !important; }
 .klaro .cookie-modal .cm-modal { border: 1px solid rgba(201,169,106,.30) !important; }
 .klaro .cookie-notice .cn-body,
 .klaro .cookie-notice p,
@@ -27,23 +37,22 @@
 }
 .klaro .context-notice p { color: #cfc7b8 !important; }
 
-/* Sekundär-/Ablehnen-Buttons: dezenter Umriss */
-.klaro .cm-btn {
+/* Buttons: „Akzeptieren" und „Ablehnen" GLEICHWERTIG (DE-Compliance: VG Hannover 2025, LG Rostock) */
+.klaro .cm-btn{
   background: transparent !important;
   color: #ece6da !important;
-  border: 1px solid rgba(236,230,218,.35) !important;
+  border: 1px solid rgba(201,169,106,.55) !important;
+  border-radius: 5px !important;
+  font-weight: 500 !important;
+  padding: .72em 1.2em !important;
 }
-.klaro .cm-btn:hover { border-color: rgba(201,169,106,.6) !important; }
+.klaro .cm-btn:hover{ background: rgba(201,169,106,.14) !important; }
+.klaro .cm-btn.cm-btn-success{ background: transparent !important; color: #ece6da !important; border-color: rgba(201,169,106,.55) !important; }
+.klaro .cookie-notice .cn-ok .cm-btn{ flex:1 1 auto !important; min-width:118px !important; text-align:center !important; }
 
-/* Akzeptieren / Erfolg: Champagner-Gold (höhere Spezifität gewinnt) */
-.klaro .cm-btn.cm-btn-success,
-.klaro .context-notice .cm-btn.cm-btn-success {
-  background: #c9a96a !important;
-  color: #15110a !important;
-  border: 1px solid #c9a96a !important;
-}
-.klaro .cm-btn.cm-btn-success:hover,
-.klaro .context-notice .cm-btn.cm-btn-success:hover { background: #d8bd86 !important; }
+/* Map-Platzhalter „Karte laden": einzelner Invite -> darf Gold bleiben (kein Accept/Reject-Paar) */
+.klaro .context-notice .cm-btn.cm-btn-success{ background:#c9a96a !important; color:#15110a !important; border-color:#c9a96a !important; }
+.klaro .context-notice .cm-btn.cm-btn-success:hover{ background:#d8bd86 !important; }
 
 /* Powered-by gedämpft */
 .klaro .cookie-notice .cm-powered-by a,

@@ -21,7 +21,7 @@
 window.klaroConfig = {
   version: 1,
   elementID: 'klaro',
-  styling: { theme: ['dark', 'bottom', 'wide'] },
+  styling: { theme: ['dark'] },
   storageMethod: 'cookie',
   cookieName: 'mm_consent',
   cookieExpiresAfterDays: 180,
