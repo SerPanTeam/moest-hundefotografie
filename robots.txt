@@ -1,0 +1,11 @@
+# robots.txt — Maren Möst Hundefotografie
+# Launch-ready (gilt am echten Domain-Root). Auf der github.io-Projekt-Vorschau wird robots.txt
+# nicht als Host-robots gelesen — die Vorschau wird über canonical (echte Domain) abgesichert.
+User-agent: *
+Allow: /
+# interne / Hilfsseiten nicht indexieren
+Disallow: /index-print.html
+Disallow: /portfolio-hero-variants.html
+Disallow: /blog.html
+
+Sitemap: https://www.moest-hundefotografie.de/sitemap.xml
