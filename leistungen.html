@@ -14,10 +14,12 @@
 <meta property="og:image" content="https://www.moest-hundefotografie.de/images/hero-banner.jpg" />
 <meta property="og:url" content="https://www.moest-hundefotografie.de/leistungen.html" />
 <link rel="icon" href="images/favicon.webp" />
+<link rel="preload" href="fonts/cormorant-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/montserrat-300.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/styles.css" />
-<link rel="stylesheet" href="css/klaro.css" />
-<link rel="stylesheet" href="css/klaro-theme.css" />
+<link rel="stylesheet" href="css/klaro.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="css/klaro-theme.css" media="print" onload="this.media='all'" />
 </head>
 <body class="theme-noir">
   <header class="site-header" data-site-header>
@@ -68,7 +70,7 @@
         </div>
       </div>
       <figure class="page-hero__visual" data-reveal data-reveal-delay="1">
-        <picture><source srcset="images/hero-leistungen-studio.webp" type="image/webp" /><img src="images/hero-leistungen-studio.jpg" alt="Fine-Art-Hundeshooting im Studio mit professionellem Licht" width="1800" height="1125" style="object-position:50% 50%" data-seo-primary /></picture>
+        <picture><source srcset="images/hero-leistungen-studio.webp" type="image/webp" /><img fetchpriority="high" src="images/hero-leistungen-studio.jpg" alt="Fine-Art-Hundeshooting im Studio mit professionellem Licht" width="1800" height="1125" style="object-position:50% 50%" data-seo-primary /></picture>
       </figure>
     </div>
   </section>
@@ -88,10 +90,10 @@
       </div>
       <div class="lux-panel__media" data-reveal data-reveal-delay="1">
         <figure class="lux-panel__frame lux-panel__frame--main" style="aspect-ratio:4/5">
-          <picture><source srcset="images/scene-session.webp" type="image/webp" /><img src="images/scene-session.jpg" alt="Ruhige Fine-Art-Shooting-Szene im Studio" width="1400" height="1750" decoding="async" style="object-position:50% 50%" /></picture>
+          <picture><source srcset="images/scene-session.webp" type="image/webp" /><img loading="lazy" src="images/scene-session.jpg" alt="Ruhige Fine-Art-Shooting-Szene im Studio" width="1400" height="1750" decoding="async" style="object-position:50% 50%" /></picture>
         </figure>
         <figure class="lux-panel__frame lux-panel__frame--floating" style="aspect-ratio:16/10">
-          <picture><source srcset="images/dog-real-58-wide.webp" type="image/webp" /><img src="images/dog-real-58-wide.jpg" alt="Australian Shepherd im dunklen Studiolicht" width="1600" height="1000" decoding="async" style="object-position:50% 38%" /></picture>
+          <picture><source srcset="images/dog-real-58-wide.webp" type="image/webp" /><img loading="lazy" src="images/dog-real-58-wide.jpg" alt="Australian Shepherd im dunklen Studiolicht" width="1600" height="1000" decoding="async" style="object-position:50% 38%" /></picture>
         </figure>
       </div>
     </div>
@@ -100,7 +102,7 @@
   <section id="services" class="section section--services section--tight" data-block="services">
     <div class="shell" data-collection="services">
     <article class="service-row" data-collection-item data-reveal>
-      <figure class="media media--zoom" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-real-57.webp" type="image/webp" /><img class="media__img" src="images/dog-real-57.jpg" alt="Ausdrucksstarkes Einzelporträt eines Hundes" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 36%" /></picture></figure>
+      <figure class="media media--zoom" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-real-57.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-real-57.jpg" alt="Ausdrucksstarkes Einzelporträt eines Hundes" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 36%" /></picture></figure>
       <div class="service-row__body">
         <p class="label">01 — Studio</p>
         <h2 class="service-row__title">Hunde-Porträts</h2>
@@ -109,7 +111,7 @@
       </div>
     </article>
     <article class="service-row service-row--reverse" data-collection-item data-reveal>
-      <figure class="media media--zoom" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-real-50.webp" type="image/webp" /><img class="media__img" src="images/dog-real-50.jpg" alt="Mensch und Hund in inniger Umarmung" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:56% 46%" /></picture></figure>
+      <figure class="media media--zoom" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-real-50.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-real-50.jpg" alt="Mensch und Hund in inniger Umarmung" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:56% 46%" /></picture></figure>
       <div class="service-row__body">
         <p class="label">02 — Verbindung</p>
         <h2 class="service-row__title">Mensch &amp; Hund</h2>
@@ -118,7 +120,7 @@
       </div>
     </article>
     <article class="service-row" data-collection-item data-reveal>
-      <figure class="media media--zoom" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-real-49.webp" type="image/webp" /><img class="media__img" src="images/dog-real-49.jpg" alt="Fine-Art-Hundeporträt im warmen Studiolicht" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:52% 40%" /></picture></figure>
+      <figure class="media media--zoom" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-real-49.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-real-49.jpg" alt="Fine-Art-Hundeporträt im warmen Studiolicht" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:52% 40%" /></picture></figure>
       <div class="service-row__body">
         <p class="label">03 — Produkte</p>
         <h2 class="service-row__title">Wandkunst &amp; Alben</h2>

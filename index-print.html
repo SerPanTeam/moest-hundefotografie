@@ -14,10 +14,12 @@
 <meta property="og:image" content="https://www.moest-hundefotografie.de/images/hero-banner.jpg" />
 <meta property="og:url" content="https://www.moest-hundefotografie.de/" />
 <link rel="icon" href="images/favicon.webp" />
+<link rel="preload" href="fonts/cormorant-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/montserrat-300.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/styles.css" />
-<link rel="stylesheet" href="css/klaro.css" />
-<link rel="stylesheet" href="css/klaro-theme.css" />
+<link rel="stylesheet" href="css/klaro.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="css/klaro-theme.css" media="print" onload="this.media='all'" />
 <style>
 /* ===== Print / PDF optimisation ===== */
 @media print{
@@ -94,7 +96,7 @@
   <main class="page page--home">
   <section id="hero" class="section section--hero hero" data-block="hero">
     <div class="hero__banner" data-reveal>
-      <picture><source srcset="images/hero-banner.webp" type="image/webp" /><img class="hero__banner-img" src="images/hero-banner.jpg" alt="Maren Möst Hundefotografie — Fine Art Photography for Dogs" width="1170" height="807" data-seo-primary /></picture>
+      <picture><source srcset="images/hero-banner.webp" type="image/webp" /><img fetchpriority="high" class="hero__banner-img" src="images/hero-banner.jpg" alt="Maren Möst Hundefotografie — Fine Art Photography for Dogs" width="1170" height="807" data-seo-primary /></picture>
     </div>
     <h1 class="hero__title" data-reveal data-reveal-delay="1">Die Liebe Ihres Lebens — <span class="accent">auf vier Pfoten.</span></h1>
     <p class="hero__lead" data-reveal data-reveal-delay="2">Exklusive Fine-Art-Studioporträts aus Waiblingen, die die einzigartige Verbindung zwischen Ihnen und Ihrem Hund für immer festhalten.</p>
@@ -127,7 +129,7 @@
       <div class="services__grid" data-collection="services">
         <article class="service-card" data-reveal>
           <figure class="media media--zoom" style="aspect-ratio:4/5;overflow:hidden">
-          <picture><source srcset="images/dog-15.webp" type="image/webp" /><img class="media__img" src="images/dog-15.jpg" alt="Ausdrucksstarkes Fine-Art-Porträt eines Hundes" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:64% 42%" /></picture>
+          <picture><source srcset="images/dog-15.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-15.jpg" alt="Ausdrucksstarkes Fine-Art-Porträt eines Hundes" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:64% 42%" /></picture>
         </figure>
           <h3 class="service-card__title">Hunde-Porträts</h3>
           <p class="service-card__sub">Ausdrucksstarke Einzelporträts im Fine-Art-Stil — die Persönlichkeit Ihres Hundes, fein und zeitlos gezeichnet.</p>
@@ -136,7 +138,7 @@
         </article>
         <article class="service-card service-card--featured" data-reveal data-reveal-delay="1">
           <figure class="media media--zoom" style="aspect-ratio:4/5;overflow:hidden">
-          <picture><source srcset="images/dog-31.webp" type="image/webp" /><img class="media__img" src="images/dog-31.jpg" alt="Mensch und Hund in inniger Umarmung, Schwarz-Weiß" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:56% 46%" /></picture>
+          <picture><source srcset="images/dog-31.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-31.jpg" alt="Mensch und Hund in inniger Umarmung, Schwarz-Weiß" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:56% 46%" /></picture>
         </figure>
           <h3 class="service-card__title">Mensch &amp; Hund</h3>
           <p class="service-card__sub">Die besondere Verbindung zwischen Ihnen und Ihrem Hund — echte Nähe, ehrlich und emotional eingefangen.</p>
@@ -145,7 +147,7 @@
         </article>
         <article class="service-card" data-reveal data-reveal-delay="2">
           <figure class="media media--zoom" style="aspect-ratio:4/5;overflow:hidden">
-          <picture><source srcset="images/dog-36.webp" type="image/webp" /><img class="media__img" src="images/dog-36.jpg" alt="Fine-Art-Wandbild eines Hundeporträts" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 44%" /></picture>
+          <picture><source srcset="images/dog-36.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-36.jpg" alt="Fine-Art-Wandbild eines Hundeporträts" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 44%" /></picture>
         </figure>
           <h3 class="service-card__title">Wandkunst &amp; Alben</h3>
           <p class="service-card__sub">Ihre Lieblingsmomente als edle Fine-Art-Produkte: Wandbilder, Prints und luxuriöse Fotoalben.</p>
@@ -166,12 +168,12 @@
         <a class="button button--text" href="portfolio.html">Alle Arbeiten ansehen →</a>
       </div>
       <div class="portfolio__grid" data-collection="portfolio">
-        <a class="portfolio-tile" href="portfolio.html" data-reveal><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-07.webp" type="image/webp" /><img class="media__img" src="images/dog-07.jpg" alt="Schwarzer Labrador im Fine-Art-Studioporträt" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 32%" /></picture></figure></a>
-        <a class="portfolio-tile" href="portfolio.html" data-reveal data-reveal-delay="1"><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-13.webp" type="image/webp" /><img class="media__img" src="images/dog-13.jpg" alt="Schokoladenbrauner Labrador im dramatischen Studiolicht" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:55% 46%" /></picture></figure></a>
-        <a class="portfolio-tile" href="portfolio.html" data-reveal data-reveal-delay="2"><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-37.webp" type="image/webp" /><img class="media__img" src="images/dog-37.jpg" alt="Dalmatiner-Porträt auf dunklem Hintergrund" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 36%" /></picture></figure></a>
-        <a class="portfolio-tile" href="portfolio.html" data-reveal><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-12.webp" type="image/webp" /><img class="media__img" src="images/dog-12.jpg" alt="Apricotfarbener Pudel, vertikales Porträt" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 20%" /></picture></figure></a>
-        <a class="portfolio-tile" href="portfolio.html" data-reveal data-reveal-delay="1"><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-02.webp" type="image/webp" /><img class="media__img" src="images/dog-02.jpg" alt="Hundeporträt vor schwarzem Studiohintergrund" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:60% 42%" /></picture></figure></a>
-        <a class="portfolio-tile" href="portfolio.html" data-reveal data-reveal-delay="2"><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-22.webp" type="image/webp" /><img class="media__img" src="images/dog-22.jpg" alt="Rhodesian Ridgeback im warmen Studiolicht" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:36% 30%" /></picture></figure></a>
+        <a class="portfolio-tile" href="portfolio.html" data-reveal><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-07.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-07.jpg" alt="Schwarzer Labrador im Fine-Art-Studioporträt" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 32%" /></picture></figure></a>
+        <a class="portfolio-tile" href="portfolio.html" data-reveal data-reveal-delay="1"><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-13.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-13.jpg" alt="Schokoladenbrauner Labrador im dramatischen Studiolicht" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:55% 46%" /></picture></figure></a>
+        <a class="portfolio-tile" href="portfolio.html" data-reveal data-reveal-delay="2"><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-37.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-37.jpg" alt="Dalmatiner-Porträt auf dunklem Hintergrund" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 36%" /></picture></figure></a>
+        <a class="portfolio-tile" href="portfolio.html" data-reveal><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-12.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-12.jpg" alt="Apricotfarbener Pudel, vertikales Porträt" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 20%" /></picture></figure></a>
+        <a class="portfolio-tile" href="portfolio.html" data-reveal data-reveal-delay="1"><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-02.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-02.jpg" alt="Hundeporträt vor schwarzem Studiohintergrund" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:60% 42%" /></picture></figure></a>
+        <a class="portfolio-tile" href="portfolio.html" data-reveal data-reveal-delay="2"><figure class="media" style="aspect-ratio:4/5;overflow:hidden"><picture><source srcset="images/dog-22.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-22.jpg" alt="Rhodesian Ridgeback im warmen Studiolicht" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:36% 30%" /></picture></figure></a>
       </div>
     </div>
   </section>

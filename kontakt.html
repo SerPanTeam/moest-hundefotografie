@@ -14,10 +14,12 @@
 <meta property="og:image" content="https://www.moest-hundefotografie.de/images/hero-banner.jpg" />
 <meta property="og:url" content="https://www.moest-hundefotografie.de/kontakt.html" />
 <link rel="icon" href="images/favicon.webp" />
+<link rel="preload" href="fonts/cormorant-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/montserrat-300.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/styles.css" />
-<link rel="stylesheet" href="css/klaro.css" />
-<link rel="stylesheet" href="css/klaro-theme.css" />
+<link rel="stylesheet" href="css/klaro.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="css/klaro-theme.css" media="print" onload="this.media='all'" />
 </head>
 <body class="theme-noir">
   <header class="site-header" data-site-header>
@@ -64,7 +66,7 @@
         </div>
       </div>
       <figure class="page-hero__visual" data-reveal data-reveal-delay="1">
-        <picture><source srcset="images/hero-kontakt-mensch-hund.webp" type="image/webp" /><img src="images/hero-kontakt-mensch-hund.jpg" alt="Warmer Mensch-und-Hund-Moment im Studio" width="1800" height="1125" style="object-position:50% 50%" data-seo-primary /></picture>
+        <picture><source srcset="images/hero-kontakt-mensch-hund.webp" type="image/webp" /><img fetchpriority="high" src="images/hero-kontakt-mensch-hund.jpg" alt="Warmer Mensch-und-Hund-Moment im Studio" width="1800" height="1125" style="object-position:50% 50%" data-seo-primary /></picture>
       </figure>
     </div>
   </section>
@@ -84,7 +86,7 @@
       </div>
       <div class="lux-panel__media" data-reveal data-reveal-delay="1">
         <figure class="lux-panel__frame lux-panel__frame--wide" style="aspect-ratio:16/10">
-          <picture><source srcset="images/dog-real-50-wide.webp" type="image/webp" /><img src="images/dog-real-50-wide.jpg" alt="Innige Umarmung zwischen Frau und Husky im Studio" width="1600" height="1000" decoding="async" style="object-position:50% 40%" /></picture>
+          <picture><source srcset="images/dog-real-50-wide.webp" type="image/webp" /><img loading="lazy" src="images/dog-real-50-wide.jpg" alt="Innige Umarmung zwischen Frau und Husky im Studio" width="1600" height="1000" decoding="async" style="object-position:50% 40%" /></picture>
         </figure>
       </div>
     </div>

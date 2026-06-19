@@ -14,10 +14,12 @@
 <meta property="og:image" content="https://www.moest-hundefotografie.de/images/hero-banner.jpg" />
 <meta property="og:url" content="https://www.moest-hundefotografie.de/datenschutz.html" />
 <link rel="icon" href="images/favicon.webp" />
+<link rel="preload" href="fonts/cormorant-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/montserrat-300.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/styles.css" />
-<link rel="stylesheet" href="css/klaro.css" />
-<link rel="stylesheet" href="css/klaro-theme.css" />
+<link rel="stylesheet" href="css/klaro.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="css/klaro-theme.css" media="print" onload="this.media='all'" />
 </head>
 <body class="theme-noir">
   <header class="site-header" data-site-header>
@@ -59,7 +61,7 @@
         <p class="page-hero__lead section-head__text" data-reveal data-reveal-delay="2">Wie personenbezogene Daten auf dieser Website verarbeitet werden.</p>
       </div>
       <figure class="page-hero__visual" data-reveal data-reveal-delay="1">
-        <picture><source srcset="images/hero-datenschutz-selection.webp" type="image/webp" /><img src="images/hero-datenschutz-selection.jpg" alt="Bildauswahl im Studio als ruhiges Datenschutz-Motiv" width="1800" height="1125" style="object-position:50% 50%" data-seo-primary /></picture>
+        <picture><source srcset="images/hero-datenschutz-selection.webp" type="image/webp" /><img fetchpriority="high" src="images/hero-datenschutz-selection.jpg" alt="Bildauswahl im Studio als ruhiges Datenschutz-Motiv" width="1800" height="1125" style="object-position:50% 50%" data-seo-primary /></picture>
       </figure>
     </div>
   </section>

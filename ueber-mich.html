@@ -14,10 +14,12 @@
 <meta property="og:image" content="https://www.moest-hundefotografie.de/images/maren-real-softbox-web.jpg" />
 <meta property="og:url" content="https://www.moest-hundefotografie.de/ueber-mich.html" />
 <link rel="icon" href="images/favicon.webp" />
+<link rel="preload" href="fonts/cormorant-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/montserrat-300.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="css/fonts.css" />
 <link rel="stylesheet" href="css/styles.css" />
-<link rel="stylesheet" href="css/klaro.css" />
-<link rel="stylesheet" href="css/klaro-theme.css" />
+<link rel="stylesheet" href="css/klaro.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="css/klaro-theme.css" media="print" onload="this.media='all'" />
 </head>
 <body class="theme-noir">
   <header class="site-header" data-site-header>
@@ -64,7 +66,7 @@
         </div>
       </div>
       <figure class="page-hero__visual" data-reveal data-reveal-delay="1">
-        <picture><source srcset="images/maren-real-softbox-web.webp" type="image/webp" /><img src="images/maren-real-softbox-web.jpg" alt="Maren Möst im Studio mit professioneller Softbox" width="1400" height="2105" style="object-position:52% 24%" data-seo-primary /></picture>
+        <picture><source srcset="images/maren-real-softbox-web.webp" type="image/webp" /><img fetchpriority="high" src="images/maren-real-softbox-web.jpg" alt="Maren Möst im Studio mit professioneller Softbox" width="1400" height="2105" style="object-position:52% 24%" data-seo-primary /></picture>
       </figure>
     </div>
   </section>
@@ -84,7 +86,7 @@
       </div>
       <div class="lux-panel__media" data-reveal data-reveal-delay="1">
         <figure class="lux-panel__frame lux-panel__frame--wide" style="aspect-ratio:16/10">
-          <picture><source srcset="images/maren-real-portrait-web.webp" type="image/webp" /><img src="images/maren-real-portrait-web.jpg" alt="Maren Möst bei der Arbeit im Studio Waiblingen" width="1600" height="1064" decoding="async" style="object-fit:cover;object-position:42% 34%" /></picture>
+          <picture><source srcset="images/maren-real-portrait-web.webp" type="image/webp" /><img loading="lazy" src="images/maren-real-portrait-web.jpg" alt="Maren Möst bei der Arbeit im Studio Waiblingen" width="1600" height="1064" decoding="async" style="object-fit:cover;object-position:42% 34%" /></picture>
         </figure>
       </div>
     </div>
@@ -93,7 +95,7 @@
   <section id="intro" class="section section--intro section--tight" data-block="intro">
     <div class="shell split">
       <figure class="figure media media--zoom" style="aspect-ratio:4/5;overflow:hidden" data-reveal>
-        <picture><source srcset="images/dog-real-58.webp" type="image/webp" /><img class="media__img" src="images/dog-real-58.jpg" alt="Fine-Art-Hundeporträt aus dem Studio Waiblingen" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 36%" /></picture>
+        <picture><source srcset="images/dog-real-58.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-real-58.jpg" alt="Fine-Art-Hundeporträt aus dem Studio Waiblingen" width="1200" height="1500" decoding="async" style="object-fit:cover;object-position:50% 36%" /></picture>
       </figure>
       <div data-reveal data-reveal-delay="1">
         <p>Mein Weg führt durch Fotografie, Mediengestaltung und Film. Diese Erfahrung prägt bis heute, wie ich arbeite: aufmerksam, bildbewusst und mit einem klaren Gefühl für Licht, Komposition und Timing.</p>
@@ -116,7 +118,7 @@
         <p class="split__measure" style="margin-top:1.2rem">Ein gutes Bild beginnt nicht mit dem Auslöser, sondern mit Vertrauen. Darum ist mir wichtig, dass sich Ihr Hund — und Sie — im Studio wohlfühlen. Erst dann entsteht das, was bleibt.</p>
       </div>
       <figure class="figure media media--zoom" style="aspect-ratio:3/2;overflow:hidden" data-reveal data-reveal-delay="1">
-        <picture><source srcset="images/dog-real-49-wide.webp" type="image/webp" /><img class="media__img" src="images/dog-real-49-wide.jpg" alt="Golden Retriever im warmen Studiolicht als Fine-Art-Porträt" width="1600" height="1000" decoding="async" style="object-fit:cover;object-position:52% 46%" /></picture>
+        <picture><source srcset="images/dog-real-49-wide.webp" type="image/webp" /><img loading="lazy" class="media__img" src="images/dog-real-49-wide.jpg" alt="Golden Retriever im warmen Studiolicht als Fine-Art-Porträt" width="1600" height="1000" decoding="async" style="object-fit:cover;object-position:52% 46%" /></picture>
       </figure>
     </div>
   </section>
