@@ -995,7 +995,7 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
   .intro-card{ grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:clamp(40px,5vw,84px); }
   .intro-card__copy .section-head__title{ max-width:20ch; }
   .services__grid{ grid-template-columns:repeat(3,1fr); }
-  .prices__grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  /* prices stay 1-col here; jump straight to 3-col at >=1024 so the 3rd card never orphans (2+1) */
   .testimonials__grid{ grid-template-columns:repeat(3,1fr); }
   .portfolio__grid{ columns:3; }
   .artwork-showcase{ grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr); }
