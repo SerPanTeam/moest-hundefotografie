@@ -519,6 +519,13 @@ p:last-child{ margin-bottom:0; }
 .service-row:first-of-type{ border-top:0; }
 .service-row__title{ font-family:var(--font-display); font-size:clamp(1.9rem,3.2vw,2.8rem); margin-bottom:1rem; }
 .service-row__price{ margin-top:1.4rem; font-family:var(--font-display); font-style:italic; font-size:1.2rem; color:var(--color-accent); }
+/* Bridge from Leistungen -> Preise: the one place that defers pricing */
+.services-bridge{
+  margin-top:clamp(28px,4vw,52px); padding-top:clamp(28px,4vw,52px);
+  border-top:1px solid var(--color-line);
+  display:flex; flex-direction:column; align-items:center; gap:clamp(16px,2vw,22px); text-align:center;
+}
+.services-bridge__note{ font-family:var(--font-display); font-style:italic; font-size:clamp(1.2rem,2vw,1.5rem); color:var(--color-ink-soft); margin:0; }
 
 /* ── Section: portfolio ────────────────────────────────────────── */
 /* portfolio: native-aspect masonry — whole dogs, never cropped */
