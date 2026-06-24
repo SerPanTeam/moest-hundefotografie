@@ -112,6 +112,10 @@
   var filters = document.querySelectorAll("[data-gallery-filter]");
   if (gallery && filters.length) {
     var filterItems = Array.prototype.slice.call(gallery.querySelectorAll("[data-gallery-item]"));
+    var liveStatus = document.createElement("p");
+    liveStatus.setAttribute("aria-live", "polite");
+    liveStatus.style.cssText = "position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap";
+    gallery.parentNode.insertBefore(liveStatus, gallery);
     filters.forEach(function (filter) {
       filter.addEventListener("click", function () {
         var value = filter.getAttribute("data-gallery-filter");
@@ -120,11 +124,14 @@
           btn.classList.toggle("is-active", active);
           btn.setAttribute("aria-pressed", active ? "true" : "false");
         });
+        var shown = 0;
         filterItems.forEach(function (item) {
           var cats = (item.getAttribute("data-category") || "").split(/\s+/);
           var show = value === "all" || cats.indexOf(value) !== -1;
           item.classList.toggle("is-hidden", !show);
+          if (show) shown++;
         });
+        liveStatus.textContent = shown + " Bilder";
       });
     });
   }
@@ -151,6 +158,7 @@
     var lbPrev = lightbox.querySelector(".gallery-lightbox__nav--prev");
     var lbNext = lightbox.querySelector(".gallery-lightbox__nav--next");
     var activeIndex = 0;
+    var lastFocus = null;
     var updateLightboxControls = function () {
       if (!lightbox.classList.contains("is-open")) return;
       var rect = lbImg.getBoundingClientRect();
@@ -178,6 +186,7 @@
       var img = item.querySelector("img");
       lbImg.src = item.getAttribute("href");
       lbImg.alt = img ? img.alt : "";
+      lightbox.setAttribute("aria-label", (img && img.alt) ? img.alt : "Portfolio Bildansicht");
       lbCaption.textContent = item.getAttribute("data-gallery-title") || "";
       if (lbImg.complete) window.requestAnimationFrame(updateLightboxControls);
     };
@@ -187,12 +196,14 @@
       showItem(activeIndex);
       lightbox.classList.add("is-open");
       document.body.style.overflow = "hidden";
-      lbClose.focus();
+      lastFocus = item;
       window.requestAnimationFrame(updateLightboxControls);
+      setTimeout(function () { lbClose.focus(); }, 60);
     };
     var closeLightbox = function () {
       lightbox.classList.remove("is-open");
       document.body.style.overflow = "";
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
     };
 
     galleryItems.forEach(function (item) {
@@ -214,6 +225,13 @@
       if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowLeft") showItem(activeIndex - 1);
       if (e.key === "ArrowRight") showItem(activeIndex + 1);
+      if (e.key === "Tab") {
+        var f = [lbClose, lbPrev, lbNext];
+        var idx = f.indexOf(document.activeElement);
+        e.preventDefault();
+        var ni = e.shiftKey ? (idx <= 0 ? f.length - 1 : idx - 1) : (idx + 1) % f.length;
+        f[ni].focus();
+      }
     });
   }
 })();
