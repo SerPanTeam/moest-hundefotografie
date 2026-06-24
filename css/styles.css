@@ -96,7 +96,7 @@ p:last-child{ margin-bottom:0; }
   display:flex; align-items:center; gap:.9em;
   margin:0 0 1.4em;
   font-family:var(--font-ui);
-  font-size:.72rem; font-weight:500; letter-spacing:.32em; text-transform:uppercase;
+  font-size:.72rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase;
   color:var(--color-accent);
 }
 .label::before{ content:""; width:34px; height:1px; background:var(--color-accent); opacity:.6; }
@@ -730,9 +730,9 @@ p:last-child{ margin-bottom:0; }
 
 /* ── Section: prices ───────────────────────────────────────────── */
 .prices__grid{ display:grid; grid-template-columns:1fr; gap:clamp(16px,2vw,26px); align-items:stretch; }
-.price-card{ display:flex; flex-direction:column; min-width:0; padding:clamp(28px,3vw,44px); background:linear-gradient(180deg, var(--color-bg-soft), rgba(24,22,20,.72)); border:1px solid var(--color-line-soft); transition:transform .6s var(--ease), border-color .6s var(--ease), box-shadow .6s var(--ease); }
-.price-card:hover{ transform:translateY(-6px); border-color:var(--color-line); box-shadow:0 24px 70px rgba(0,0,0,.22); }
-.price-card--featured{ border-color:var(--color-accent); background:var(--color-surface); }
+.price-card{ display:flex; flex-direction:column; min-width:0; padding:clamp(26px,2.6vw,38px) clamp(8px,1.5vw,22px); border-top:1px solid var(--color-line); transition:border-color .5s var(--ease); }
+.price-card:hover{ border-top-color:rgba(201,169,106,.5); }
+.price-card--featured{ border-top-color:var(--color-accent); }
 .price-card__name{ font-family:var(--font-display); font-size:1.6rem; }
 .price-card__tag{ margin-top:.4em; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--color-accent); }
 .price-card__price{ margin:1.3rem 0; font-family:var(--font-display); font-size:clamp(2rem,3vw,2.6rem); color:var(--color-ink); }
@@ -967,7 +967,7 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
   .page-hero .shell{ display:flex; flex-direction:column-reverse; gap:24px; align-items:stretch; }
   .page-hero__visual{ min-height:250px; height:250px; }
   .page-hero__content{ max-width:none; }
-  .page-hero__title{ font-size:clamp(2.25rem,14vw,3.25rem); }
+  .page-hero__title{ font-size:clamp(2.55rem,12.5vw,3.5rem); }
   .page-hero__proof{ gap:.62em 1em; font-size:.64rem; letter-spacing:.14em; }
 }
 @media (min-width:680px){
