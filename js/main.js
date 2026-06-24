@@ -3,10 +3,14 @@
 (function () {
   "use strict";
 
-  /* sticky header background */
+  /* sticky header background + mobile quick-contact bar */
   var header = document.querySelector("[data-site-header]");
-  if (header) {
-    var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 40); };
+  var mobileCta = document.querySelector("[data-mobile-cta]");
+  if (header || mobileCta) {
+    var onScroll = function () {
+      if (header) header.classList.toggle("is-scrolled", window.scrollY > 40);
+      if (mobileCta) mobileCta.classList.toggle("is-visible", window.scrollY > 560);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
   }
