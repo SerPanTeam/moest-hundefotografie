@@ -993,7 +993,8 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
     max-width:none;
   }
   .experience-step__body{ max-width:46ch; }
-  /* mirrored row: text left, image right; text near the image, left-read */
+  /* mirrored row: swap the column ratio too, so the image stays the WIDE column (uniform photo size) */
+  .experience-step--reverse{ grid-template-columns:.88fr 1.12fr; }
   .experience-step--reverse .experience-step__media{ order:2; }
   .experience-step--reverse .experience-step__body{ order:1; justify-self:end; }
   /* hairline ties the short caption to the frame so it reads as a filled block, not a stray line */
