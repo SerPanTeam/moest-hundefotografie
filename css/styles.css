@@ -522,7 +522,11 @@ p:last-child{ margin-bottom:0; }
 .service-row__price{ margin-top:1.4rem; font-family:var(--font-display); font-style:italic; font-size:1.2rem; color:var(--color-accent); }
 
 /* ── Section: portfolio ────────────────────────────────────────── */
-.portfolio__grid{ display:grid; grid-template-columns:1fr; gap:clamp(10px,1.4vw,18px); align-items:start; }
+/* portfolio: native-aspect masonry — whole dogs, never cropped */
+.portfolio__grid{ columns:1; column-gap:clamp(10px,1.4vw,18px); }
+.portfolio-tile{ break-inside:avoid; margin-bottom:clamp(10px,1.4vw,18px); width:100%; }
+.portfolio-tile .media{ display:block; }
+.portfolio-tile .media__img{ height:auto; display:block; }
 .gallery-toolbar{
   display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
   gap:18px; margin-bottom:clamp(24px,3vw,44px);
@@ -940,7 +944,7 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
 }
 @media (min-width:680px){
   .contact-form{ grid-template-columns:1fr 1fr; }
-  .portfolio__grid{ grid-template-columns:repeat(2,1fr); }
+  .portfolio__grid{ columns:2; }
   .blog__grid{ grid-template-columns:repeat(2,1fr); }
   .trust-strip{ grid-template-columns:repeat(3,1fr); }
   .lux-icon-grid{ grid-template-columns:repeat(2,1fr); }
@@ -956,10 +960,7 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
   .services__grid{ grid-template-columns:repeat(3,1fr); }
   .prices__grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .testimonials__grid{ grid-template-columns:repeat(3,1fr); }
-  .portfolio__grid{ grid-template-columns:repeat(3,1fr); }
-  .portfolio__grid--editorial{ grid-auto-flow:dense; }
-  .portfolio__grid--editorial .portfolio-tile--wide{ grid-column:span 2; }
-  .portfolio__grid--home .portfolio-tile--wide{ grid-column:span 2; }
+  .portfolio__grid{ columns:3; }
   .artwork-showcase{ grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr); }
   .artwork-showcase__copy{ justify-self:end; }
   .artwork-strip{
@@ -1022,8 +1023,4 @@ section[id], .contact-form__input, .contact-form__textarea, [data-faq-item]{
 /* <picture> wrappers (webp + raster fallback) must not affect layout — img lays out as if picture weren't there */
 picture{ display:contents; }
 
-/* Galleries: uniform grid (captions removed in markup) — calm, premium */
-.portfolio__grid--editorial{ grid-auto-flow:row; }
-.portfolio__grid--editorial .portfolio-tile--wide,
-.portfolio__grid--editorial .portfolio-tile--tall{ grid-column:auto; }
-.portfolio__grid--editorial .portfolio-tile .media{ aspect-ratio:4/5 !important; }
+/* Galleries: native-aspect masonry (no forced crop) */
