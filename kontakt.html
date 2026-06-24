@@ -102,7 +102,7 @@
         </div>
       </div>
       <figure class="page-hero__visual" data-reveal data-reveal-delay="1">
-        <picture><source srcset="images/hero-kontakt-mensch-hund.webp" type="image/webp" /><img fetchpriority="high" src="images/hero-kontakt-mensch-hund.jpg" alt="Warmer Mensch-und-Hund-Moment im Studio" width="1800" height="1125" style="object-position:50% 50%" data-seo-primary /></picture>
+        <picture><source srcset="images/hero-kontakt-mensch-hund.webp" type="image/webp" /><img fetchpriority="high" src="images/hero-kontakt-mensch-hund.jpg" alt="Warmer Mensch-und-Hund-Moment im Studio" width="1800" height="1125" style="object-position:50% 32%" data-seo-primary /></picture>
       </figure>
     </div>
   </section>
@@ -130,35 +130,38 @@
     <div class="shell contact">
       <form class="contact-form" data-contact-form novalidate>
         <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Website (bitte leer lassen)<input type="text" name="website" tabindex="-1" autocomplete="off" data-hp /></label></div>
-        <div class="contact-form__field"><label class="contact-form__label" for="name">Ihr Name</label><input class="contact-form__input" id="name" name="name" type="text" placeholder="Vor- und Nachname" autocomplete="name" required /></div>
+        <p class="contact-form__field--full" style="margin:0;font-size:.8rem;color:var(--color-muted)">Pflichtfelder sind mit <span style="color:var(--color-accent)" aria-hidden="true">*</span> markiert.</p>
+        <div class="contact-form__field"><label class="contact-form__label" for="name">Ihr Name <span style="color:var(--color-accent)" aria-hidden="true">*</span></label><input class="contact-form__input" id="name" name="name" type="text" placeholder="Vor- und Nachname" autocomplete="name" required /></div>
         <div class="contact-form__field"><label class="contact-form__label" for="hund">Name des Hundes</label><input class="contact-form__input" id="hund" name="hund" type="text" placeholder="z. B. Bella" /></div>
-        <div class="contact-form__field"><label class="contact-form__label" for="email">E-Mail</label><input class="contact-form__input" id="email" name="email" type="email" placeholder="ihre@email.de" autocomplete="email" required /></div>
+        <div class="contact-form__field"><label class="contact-form__label" for="email">E-Mail <span style="color:var(--color-accent)" aria-hidden="true">*</span></label><input class="contact-form__input" id="email" name="email" type="email" placeholder="ihre@email.de" autocomplete="email" required /></div>
         <div class="contact-form__field"><label class="contact-form__label" for="tel">Telefon</label><input class="contact-form__input" id="tel" name="tel" type="tel" placeholder="Optional" autocomplete="tel" /></div>
         <div class="contact-form__field contact-form__field--full"><label class="contact-form__label" for="termin">Wunschzeitraum</label><input class="contact-form__input" id="termin" name="termin" type="text" placeholder="z. B. Frühjahr 2026, am liebsten am Wochenende" /></div>
         <div class="contact-form__field contact-form__field--full"><label class="contact-form__label" for="msg">Ihre Nachricht</label><textarea class="contact-form__textarea" id="msg" name="msg" placeholder="Erzählen Sie mir von Ihrem Hund und was Sie sich wünschen."></textarea></div>
         <div class="contact-form__field contact-form__field--full">
           <button class="button button--primary" type="submit" data-form-submit>Anfrage senden <span class="button__arrow" aria-hidden="true">→</span></button>
           <p class="contact-form__call">Lieber anrufen? <a href="tel:015771822011">01577 1822011</a></p>
-          <p class="contact-form__note" data-form-success hidden>Vielen Dank für Ihre Anfrage, ich melde mich persönlich bei Ihnen.</p>
+          <p class="contact-form__note" data-form-success role="status" hidden>Vielen Dank für Ihre Anfrage, ich melde mich persönlich bei Ihnen.</p>
           <p class="contact-form__legal" style="margin-top:.9rem;font-size:.82rem;line-height:1.5;color:var(--color-muted)">Ihre Angaben aus dem Kontaktformular werden zur Bearbeitung Ihrer Anfrage verarbeitet. Weitere Informationen in meiner <a href="datenschutz.html" class="accent">Datenschutzerklärung</a>.</p>
         </div>
       </form>
+      <div class="contact-rail">
       <address class="contact-info">
         <div class="contact-info__row"><p class="contact-info__label">Anruf</p><p class="contact-info__value"><a href="tel:015771822011">01577 1822011</a></p></div>
         <div class="contact-info__row"><p class="contact-info__label">WhatsApp</p><p class="contact-info__value"><a href="https://wa.me/491772028979" target="_blank" rel="noopener noreferrer">0177 2028979</a></p></div>
         <div class="contact-info__row"><p class="contact-info__label">E-Mail</p><p class="contact-info__value"><a href="mailto:maren@moest-fotografie.de">maren@moest-fotografie.de</a></p></div>
         <div class="contact-info__row"><p class="contact-info__label">Studio</p><p class="contact-info__value">71332 Waiblingen<br />Mittlere Sackgasse 15/1</p></div>
-        <div class="contact-reassurance" aria-label="Was nach der Anfrage passiert">
-          <div class="contact-reassurance__item">
-            <span class="contact-reassurance__title">Persönliche Antwort</span>
-            <p class="contact-reassurance__text">Ich melde mich direkt bei Ihnen und kläre Wünsche, Hund und passenden Zeitraum.</p>
-          </div>
-          <div class="contact-reassurance__item">
-            <span class="contact-reassurance__title">Kein Druck</span>
-            <p class="contact-reassurance__text">Die Anfrage ist unverbindlich. Alles Weitere besprechen wir in Ruhe.</p>
-          </div>
-        </div>
       </address>
+      <div class="contact-reassurance" aria-label="Was nach der Anfrage passiert">
+        <div class="contact-reassurance__item">
+          <span class="contact-reassurance__title">Persönliche Antwort</span>
+          <p class="contact-reassurance__text">Ich melde mich direkt bei Ihnen und kläre Wünsche, Hund und passenden Zeitraum.</p>
+        </div>
+        <div class="contact-reassurance__item">
+          <span class="contact-reassurance__title">Kein Druck</span>
+          <p class="contact-reassurance__text">Die Anfrage ist unverbindlich. Alles Weitere besprechen wir in Ruhe.</p>
+        </div>
+      </div>
+      </div>
       <div class="contact__map">
         <iframe class="contact__map-frame" title="Standort Studio Möst Fotografie, Waiblingen" loading="lazy" data-name="googleMaps" data-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10505.12191229027!2d9.3168838!3d48.8338171!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799c8af7c7312c5%3A0xca763a275b360e33!2sM%C3%B6st%20Fotografie!5e0!3m2!1sde!2sde!4v1631641139371!5m2!1sde!2sde"></iframe>
       </div>

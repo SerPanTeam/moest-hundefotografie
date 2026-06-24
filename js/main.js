@@ -72,12 +72,17 @@
       var hp = form.querySelector("[data-hp]");
       if (hp && hp.value) { return; } // Honeypot: Bot erkannt -> still verwerfen
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      var note = form.querySelector("[data-form-success]");
-      if (note) note.hidden = false;
       var submit = form.querySelector("[data-form-submit]");
       if (submit) {
         submit.disabled = true;
         submit.innerHTML = 'Anfrage gesendet <span class="button__arrow" aria-hidden="true">→</span>';
+      }
+      var note = form.querySelector("[data-form-success]");
+      if (note) {
+        note.hidden = false;
+        note.setAttribute("tabindex", "-1");
+        note.scrollIntoView({ behavior: "smooth", block: "center" });
+        note.focus();
       }
     });
   }
