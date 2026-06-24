@@ -68,6 +68,9 @@ textarea:focus-visible{
   outline:2px solid var(--color-accent);
   outline-offset:4px;
 }
+.sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.skip-link{ position:fixed; left:50%; top:0; transform:translate(-50%,-130%); z-index:200; background:var(--color-accent); color:#15110a; padding:.7em 1.4em; font-family:var(--font-ui); font-size:.82rem; letter-spacing:.08em; border-radius:0 0 4px 4px; transition:transform .2s var(--ease); }
+.skip-link:focus{ transform:translate(-50%,0); outline:2px solid #15110a; outline-offset:-4px; }
 
 /* ── Typography ────────────────────────────────────────────────── */
 h1,h2,h3{ font-family:var(--font-display); font-weight:400; line-height:1.05; letter-spacing:.005em; margin:0; text-wrap:balance; }
