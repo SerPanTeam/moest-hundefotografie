@@ -1013,10 +1013,16 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
   .lux-panel__grid{ grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); }
   .lux-panel__grid--reverse{ grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); }
   .lux-panel__grid--reverse .lux-panel__copy{ order:2; }
-  /* Kontakt "Eine Anfrage" panel: let the photo fill the copy height so both columns end together */
-  #kontakt-einstieg .lux-panel__grid{ align-items:stretch; }
-  #kontakt-einstieg .lux-panel__media{ height:100%; }
-  #kontakt-einstieg .lux-panel__frame--wide{ aspect-ratio:auto !important; flex:1 1 auto; }
+  /* lux-panels where a single wide photo is shorter than the copy: let it fill the copy height so both columns end together */
+  #kontakt-einstieg .lux-panel__grid,
+  #studio-handwerk .lux-panel__grid,
+  #journal-feature .lux-panel__grid{ align-items:stretch; }
+  #kontakt-einstieg .lux-panel__media,
+  #studio-handwerk .lux-panel__media,
+  #journal-feature .lux-panel__media{ height:100%; }
+  #kontakt-einstieg .lux-panel__frame--wide,
+  #studio-handwerk .lux-panel__frame--wide,
+  #journal-feature .lux-panel__frame--wide{ aspect-ratio:auto !important; flex:1 1 auto; }
   .lux-icon-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .footer__grid{ grid-template-columns:1.5fr 1fr 1fr; }
 }
