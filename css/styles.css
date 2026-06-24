@@ -301,7 +301,7 @@ p:last-child{ margin-bottom:0; }
 .footer__grid{ display:grid; grid-template-columns:1fr; gap:clamp(30px,4vw,60px); }
 .footer__logo{ height:54px; width:auto; margin-bottom:1.4rem; }
 .footer__tagline{ font-size:.92rem; color:var(--color-muted); max-width:32ch; }
-.footer__col-title{ font-family:var(--font-ui); font-size:.7rem; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--color-muted); margin:0 0 1.2em; }
+.footer__col-title{ font-family:var(--font-ui); font-size:.7rem; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--color-ink-soft); margin:0 0 1.2em; }
 .footer__link{ display:block; font-size:.92rem; color:var(--color-ink-soft); margin-bottom:.7em; transition:color .4s var(--ease); }
 .footer__link:hover{ color:var(--color-accent); }
 .footer__bottom{
@@ -523,7 +523,7 @@ p:last-child{ margin-bottom:0; }
 
 /* ── Section: portfolio ────────────────────────────────────────── */
 /* portfolio: native-aspect masonry — whole dogs, never cropped */
-.portfolio__grid{ columns:1; column-gap:clamp(10px,1.4vw,18px); }
+.portfolio__grid{ columns:1; column-gap:clamp(10px,1.4vw,18px); column-fill:balance; }
 .portfolio-tile{ break-inside:avoid; margin-bottom:clamp(10px,1.4vw,18px); width:100%; }
 .portfolio-tile .media{ display:block; }
 .portfolio-tile .media__img{ height:auto; display:block; }
@@ -702,7 +702,7 @@ p:last-child{ margin-bottom:0; }
 }
 
 /* ── Section: prices ───────────────────────────────────────────── */
-.prices__grid{ display:grid; grid-template-columns:1fr; gap:clamp(16px,2vw,26px); }
+.prices__grid{ display:grid; grid-template-columns:1fr; gap:clamp(16px,2vw,26px); align-items:stretch; }
 .price-card{ display:flex; flex-direction:column; min-width:0; padding:clamp(28px,3vw,44px); background:linear-gradient(180deg, var(--color-bg-soft), rgba(24,22,20,.72)); border:1px solid var(--color-line-soft); transition:transform .6s var(--ease), border-color .6s var(--ease), box-shadow .6s var(--ease); }
 .price-card:hover{ transform:translateY(-6px); border-color:var(--color-line); box-shadow:0 24px 70px rgba(0,0,0,.22); }
 .price-card--featured{ border-color:var(--color-accent); background:var(--color-surface); }
