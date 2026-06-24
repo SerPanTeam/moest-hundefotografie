@@ -283,7 +283,7 @@ p:last-child{ margin-bottom:0; }
 .nav__link.is-active{ color:var(--color-ink); }
 .site-nav__cta{ margin-left:6px; }
 
-.nav-toggle{ display:none; flex-direction:column; gap:5px; background:none; border:0; padding:8px; }
+.nav-toggle{ display:none; flex-direction:column; align-items:center; justify-content:center; gap:5px; background:none; border:0; padding:8px; min-width:44px; min-height:44px; }
 .nav-toggle__bar{ width:26px; height:1.4px; background:var(--color-ink); transition:.4s var(--ease); }
 
 .nav-drawer{
@@ -795,8 +795,8 @@ p:last-child{ margin-bottom:0; }
 .contact-form__call a{ color:var(--color-accent); font-weight:500; white-space:nowrap; border-bottom:1px solid var(--color-line); padding-bottom:1px; }
 .contact-form__input,.contact-form__textarea{
   background:rgba(8,7,6,.42);
-  border:1px solid rgba(201,169,106,.16);
-  border-bottom-color:rgba(201,169,106,.32);
+  border:1px solid rgba(201,169,106,.25);
+  border-bottom-color:rgba(201,169,106,.42);
   color:var(--color-ink);
   font-family:var(--font-ui);
   font-weight:300;
@@ -855,8 +855,10 @@ p:last-child{ margin-bottom:0; }
 /* about portrait caption */
 .figure{ margin:0; }
 .figure__caption{ margin-top:.9rem; font-size:.78rem; letter-spacing:.04em; color:var(--color-muted); }
-.stats{ display:flex; flex-wrap:wrap; gap:28px; margin-top:2rem; padding-top:1.8rem; border-top:1px solid var(--color-line); }
-.stat__num{ font-family:var(--font-display); font-size:clamp(2rem,3vw,2.8rem); color:var(--color-ink); line-height:1; }
+.stats{ display:flex; flex-direction:column; margin-top:2rem; border-top:1px solid var(--color-line); }
+.stat{ padding:1rem 0; }
+.stat:not(:last-child){ border-bottom:1px solid var(--color-line-soft); }
+.stat__num{ font-family:var(--font-display); font-size:clamp(1.8rem,2.6vw,2.4rem); color:var(--color-ink); line-height:1; }
 .stat__label{ font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--color-muted); margin-top:.5em; }
 
 /* ── Animations (reveal) ───────────────────────────────────────── */
@@ -872,6 +874,7 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
 [data-reveal-delay="2"]{ transition-delay:.2s; }
 [data-reveal-delay="3"]{ transition-delay:.3s; }
 @media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
   html.js [data-reveal]{ opacity:1; transform:none; }
   .hero__cue-bar{ animation:none; }
   .button,

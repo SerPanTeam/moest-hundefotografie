@@ -79,10 +79,17 @@
       }
       var note = form.querySelector("[data-form-success]");
       if (note) {
+        var rm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         note.hidden = false;
         note.setAttribute("tabindex", "-1");
-        note.scrollIntoView({ behavior: "smooth", block: "center" });
+        note.scrollIntoView({ behavior: rm ? "auto" : "smooth", block: "center" });
         note.focus();
+      }
+      if (submit) {
+        setTimeout(function () {
+          submit.disabled = false;
+          submit.innerHTML = 'Anfrage senden <span class="button__arrow" aria-hidden="true">&#8594;</span>';
+        }, 6000);
       }
     });
   }
