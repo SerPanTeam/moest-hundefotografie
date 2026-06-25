@@ -53,7 +53,9 @@ window.klaroConfig = {
   },
   services: [
     { name: 'googleMaps',      title: 'Google Maps',           purposes: ['functional'], default: false, required: false, cookies: [] },
-    { name: 'googleAnalytics', title: 'Google Analytics (GA4)', purposes: ['analytics'],  default: false, required: false, cookies: [/^_ga/, '_gid'] },
-    { name: 'metaPixel',       title: 'Meta-Pixel',             purposes: ['marketing'],  default: false, required: false, cookies: ['_fbp'] },
+    // googleAnalytics (GA4) und metaPixel sind in Phase 2 zu aktivieren (siehe Kopf-Kommentar Schritt 4).
+    // Bis das Tracking real eingebunden ist, NICHT im Banner anbieten — sonst Einwilligung ohne ladenden Dienst.
+    // { name: 'googleAnalytics', title: 'Google Analytics (GA4)', purposes: ['analytics'],  default: false, required: false, cookies: [/^_ga/, '_gid'] },
+    // { name: 'metaPixel',       title: 'Meta-Pixel',             purposes: ['marketing'],  default: false, required: false, cookies: ['_fbp'] },
   ],
 };

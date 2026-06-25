@@ -6,10 +6,16 @@
   /* sticky header background + mobile quick-contact bar */
   var header = document.querySelector("[data-site-header]");
   var mobileCta = document.querySelector("[data-mobile-cta]");
+  var ctaSection = document.querySelector("#contact"); /* in-page primary contact CTA section */
   if (header || mobileCta) {
     var onScroll = function () {
       if (header) header.classList.toggle("is-scrolled", window.scrollY > 40);
-      if (mobileCta) mobileCta.classList.toggle("is-visible", window.scrollY > 560);
+      if (mobileCta) {
+        /* hide the sticky bar while the in-section contact CTA is on screen -> avoids stacked duplicate CTAs */
+        var inContact = false;
+        if (ctaSection) { var r = ctaSection.getBoundingClientRect(); inContact = r.top < window.innerHeight && r.bottom > 0; }
+        mobileCta.classList.toggle("is-visible", window.scrollY > 560 && !inContact);
+      }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
