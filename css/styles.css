@@ -160,7 +160,7 @@ p:last-child{ margin-bottom:0; }
 .media{ display:block; margin:0; background:var(--color-bg-soft); position:relative; }
 .media::after{
   content:""; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(120deg, transparent 0%, rgba(201,169,106,.13) 46%, transparent 62%);
+  background:linear-gradient(120deg, transparent 38%, rgba(201,169,106,.16) 50%, transparent 62%);
   opacity:0; transform:translateX(-20%);
   transition:opacity .7s var(--ease), transform .9s var(--ease);
 }
