@@ -158,25 +158,23 @@ p:last-child{ margin-bottom:0; }
 
 /* ── Components: media (frame is inline aspect-ratio per CMS contract) ── */
 .media{ display:block; margin:0; background:var(--color-bg-soft); position:relative; }
-.media::after{
-  content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
-  /* Studio-Spotlight: weiches Schlüssellicht blüht beim Hover auf dem Motiv auf */
-  background:radial-gradient(72% 60% at 52% 40%, rgba(255,247,232,.22), rgba(255,247,232,.06) 42%, transparent 66%);
-  mix-blend-mode:screen;
-  opacity:0; transform:scale(1.18);
-  transition:opacity .9s var(--ease), transform 1.3s var(--ease);
-}
+.media::after{ content:none; } /* Overlay aus — Rack-Focus statt Spotlight/Sheen */
 .media__img{ width:100%; height:100%; transition:transform 1.2s var(--ease); }
 .media--zoom{ overflow:hidden; }
-/* resting vignette hält die Ränder im Schatten; vertieft sich beim Hover, damit das Spotlight knallt (kein Ausbleichen) */
-.media--zoom::before{
-  content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
-  background:radial-gradient(116% 100% at 50% 42%, transparent 44%, rgba(8,7,6,.5) 100%);
-  opacity:.4; transition:opacity .9s var(--ease);
+/* Rack Focus: Bild ruht leicht unscharf + gedämpft und "zieht scharf" beim Hover.
+   Nur Hover-Geräte (Touch hat kein Hover -> Bilder dort immer scharf, kein Dauer-Blur). */
+@media (hover:hover){
+  .media--zoom .media__img{
+    filter:blur(2px) saturate(.85) brightness(.97);
+    transform:scale(1.05);
+    transition:filter .65s var(--ease), transform 1.1s var(--ease);
+  }
+  .media--zoom:hover .media__img{ filter:none; transform:scale(1); }
+  /* Galerie-Kacheln NICHT im Ruhezustand unscharf — Portfolio muss scharf browsbar bleiben
+     (+ Performance: kein Blur auf ~50 Tiles gleichzeitig). Eigener Zoom-Hover bleibt. */
+  .portfolio-tile .media__img{ filter:none; transform:none; }
+  .portfolio-tile:hover .media__img{ transform:scale(1.05); }
 }
-.media--zoom:hover::before{ opacity:1; }
-.media--zoom:hover .media__img{ transform:scale(1.06); }
-.media--zoom:hover::after{ opacity:1; transform:scale(1); }
 
 /* ── Premium visual systems ───────────────────────────────────── */
 .lux-panel{
