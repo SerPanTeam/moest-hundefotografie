@@ -260,7 +260,7 @@
   /* 3D-Tilt + Glanz auf Fotos (vanilla-tilt, self-hosted). Nur Hover-Geräte;
      Lib wird lazy nachgeladen und auf alle .media--zoom angewandt. */
   if (window.matchMedia && window.matchMedia("(hover:hover)").matches) {
-    var tiltTargets = document.querySelectorAll(".media--zoom");
+    var tiltTargets = document.querySelectorAll(".media--zoom, .page-hero__visual, .lux-panel__frame");
     if (tiltTargets.length) {
       var vt = document.createElement("script");
       vt.src = "js/vanilla-tilt.min.js";
