@@ -160,14 +160,16 @@ p:last-child{ margin-bottom:0; }
 .media{ display:block; margin:0; background:var(--color-bg-soft); position:relative; }
 .media::after{
   content:""; position:absolute; inset:0; pointer-events:none;
-  background:linear-gradient(120deg, transparent 38%, rgba(201,169,106,.16) 50%, transparent 62%);
-  opacity:0; transform:translateX(-20%);
-  transition:opacity .7s var(--ease), transform .9s var(--ease);
+  /* soft directional key light — wie ein Fotograf, der die Softbox auf den Hund richtet */
+  background:radial-gradient(125% 95% at 56% 32%, rgba(255,247,232,.26), rgba(255,247,232,.09) 36%, transparent 68%);
+  mix-blend-mode:screen;
+  opacity:0; transform:scale(1.12);
+  transition:opacity 1s var(--ease), transform 1.4s var(--ease);
 }
 .media__img{ width:100%; height:100%; transition:transform 1.2s var(--ease); }
 .media--zoom{ overflow:hidden; }
 .media--zoom:hover .media__img{ transform:scale(1.06); }
-.media--zoom:hover::after{ opacity:1; transform:translateX(20%); }
+.media--zoom:hover::after{ opacity:1; transform:scale(1); }
 
 /* ── Premium visual systems ───────────────────────────────────── */
 .lux-panel{
