@@ -158,11 +158,12 @@ p:last-child{ margin-bottom:0; }
 
 /* ── Components: media (frame is inline aspect-ratio per CMS contract) ── */
 .media{ display:block; margin:0; background:var(--color-bg-soft); position:relative; }
-.media::after{ content:none; } /* kein Overlay — Ken-Burns-Drift */
-/* Ken Burns: beim Hover driftet das Bild langsam (Zoom + sanfter Schwenk Richtung Motiv) — dokumentarisch, ruhig */
-.media__img{ width:100%; height:100%; transform-origin:50% 38%; transition:transform 6s var(--ease-soft); }
-.media--zoom{ overflow:hidden; }
-.media--zoom:hover .media__img{ transform:scale(1.14) translate(-2%, -1.5%); }
+.media::after{ content:none; } /* kein Overlay */
+.media__img{ width:100%; height:100%; transition:transform .6s var(--ease); }
+/* 3D-Tilt + Glanz: Bewegung kommt von vanilla-tilt (JS), das perspective/rotate + eine
+   Glare-Schicht aufs Element legt. Container nur fürs 3D vorbereiten. */
+.media--zoom{ overflow:hidden; transform-style:preserve-3d; }
+.js-tilt-glare{ border-radius:inherit; }
 
 /* ── Premium visual systems ───────────────────────────────────── */
 .lux-panel{

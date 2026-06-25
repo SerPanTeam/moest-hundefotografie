@@ -256,4 +256,25 @@
       }
     });
   }
+
+  /* 3D-Tilt + Glanz auf Fotos (vanilla-tilt, self-hosted). Nur Hover-Geräte;
+     Lib wird lazy nachgeladen und auf alle .media--zoom angewandt. */
+  if (window.matchMedia && window.matchMedia("(hover:hover)").matches) {
+    var tiltTargets = document.querySelectorAll(".media--zoom");
+    if (tiltTargets.length) {
+      var vt = document.createElement("script");
+      vt.src = "js/vanilla-tilt.min.js";
+      vt.defer = true;
+      vt.onload = function () {
+        if (window.VanillaTilt) {
+          window.VanillaTilt.init(tiltTargets, {
+            max: 6, speed: 600, scale: 1.02,
+            glare: true, "max-glare": 0.22,
+            gyroscope: false
+          });
+        }
+      };
+      document.head.appendChild(vt);
+    }
+  }
 })();
