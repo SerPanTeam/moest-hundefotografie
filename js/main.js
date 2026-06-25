@@ -260,7 +260,11 @@
   /* 3D-Tilt + Glanz auf Fotos (vanilla-tilt, self-hosted). Nur Hover-Geräte;
      Lib wird lazy nachgeladen und auf alle .media--zoom angewandt. */
   if (window.matchMedia && window.matchMedia("(hover:hover)").matches) {
-    var tiltTargets = document.querySelectorAll(".media--zoom, .page-hero__visual, .lux-panel__frame");
+    /* Galerie-Kacheln NICHT tilten: 3D-Transform in CSS-Multicolumn (.portfolio__grid)
+       lässt die Kacheln in Chromium verschwinden. Feature-Fotos behalten den Tilt. */
+    var tiltTargets = [].slice.call(
+      document.querySelectorAll(".media--zoom, .page-hero__visual, .lux-panel__frame")
+    ).filter(function (el) { return !el.closest(".portfolio__grid"); });
     if (tiltTargets.length) {
       var vt = document.createElement("script");
       vt.src = "js/vanilla-tilt.min.js";

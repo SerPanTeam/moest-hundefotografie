@@ -163,6 +163,8 @@ p:last-child{ margin-bottom:0; }
 /* 3D-Tilt + Glanz: Bewegung kommt von vanilla-tilt (JS), das perspective/rotate + eine
    Glare-Schicht aufs Element legt. Container nur fürs 3D vorbereiten. */
 .media--zoom{ overflow:hidden; transform-style:preserve-3d; }
+/* Galerie-Kacheln im Multicolumn-Grid KEIN 3D-Kontext (sonst verschwinden sie in Chromium) */
+.portfolio__grid .media--zoom{ transform-style:flat; }
 /* Tilt auch auf den prominenten Unterseiten-Fotos (Page-Hero + Lux-Panel-Frames) */
 .page-hero__visual,
 .lux-panel__frame{ transform-style:preserve-3d; overflow:hidden; }
