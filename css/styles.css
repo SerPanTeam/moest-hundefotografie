@@ -159,15 +159,22 @@ p:last-child{ margin-bottom:0; }
 /* ── Components: media (frame is inline aspect-ratio per CMS contract) ── */
 .media{ display:block; margin:0; background:var(--color-bg-soft); position:relative; }
 .media::after{
-  content:""; position:absolute; inset:0; pointer-events:none;
-  /* soft directional key light — wie ein Fotograf, der die Softbox auf den Hund richtet */
-  background:radial-gradient(125% 95% at 56% 32%, rgba(255,247,232,.26), rgba(255,247,232,.09) 36%, transparent 68%);
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
+  /* Studio-Spotlight: weiches Schlüssellicht blüht beim Hover auf dem Motiv auf */
+  background:radial-gradient(72% 60% at 52% 40%, rgba(255,247,232,.22), rgba(255,247,232,.06) 42%, transparent 66%);
   mix-blend-mode:screen;
-  opacity:0; transform:scale(1.12);
-  transition:opacity 1s var(--ease), transform 1.4s var(--ease);
+  opacity:0; transform:scale(1.18);
+  transition:opacity .9s var(--ease), transform 1.3s var(--ease);
 }
 .media__img{ width:100%; height:100%; transition:transform 1.2s var(--ease); }
 .media--zoom{ overflow:hidden; }
+/* resting vignette hält die Ränder im Schatten; vertieft sich beim Hover, damit das Spotlight knallt (kein Ausbleichen) */
+.media--zoom::before{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
+  background:radial-gradient(116% 100% at 50% 42%, transparent 44%, rgba(8,7,6,.5) 100%);
+  opacity:.4; transition:opacity .9s var(--ease);
+}
+.media--zoom:hover::before{ opacity:1; }
 .media--zoom:hover .media__img{ transform:scale(1.06); }
 .media--zoom:hover::after{ opacity:1; transform:scale(1); }
 
