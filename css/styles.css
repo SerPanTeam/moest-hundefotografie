@@ -158,19 +158,11 @@ p:last-child{ margin-bottom:0; }
 
 /* ── Components: media (frame is inline aspect-ratio per CMS contract) ── */
 .media{ display:block; margin:0; background:var(--color-bg-soft); position:relative; }
-.media::after{
-  content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
-  /* Galerie-Rahmen: feine Gold-Passepartout-Linie + weiche Rand-Vignette beim Hover */
-  box-shadow:
-    inset 0 0 0 1px rgba(201,169,106,.78),
-    inset 0 0 60px 10px rgba(8,7,6,.5);
-  opacity:0;
-  transition:opacity .55s var(--ease);
-}
-.media__img{ width:100%; height:100%; transition:transform 1.2s var(--ease); }
+.media::after{ content:none; } /* kein Overlay — Ken-Burns-Drift */
+/* Ken Burns: beim Hover driftet das Bild langsam (Zoom + sanfter Schwenk Richtung Motiv) — dokumentarisch, ruhig */
+.media__img{ width:100%; height:100%; transform-origin:50% 38%; transition:transform 6s var(--ease-soft); }
 .media--zoom{ overflow:hidden; }
-.media--zoom:hover .media__img{ transform:scale(1.03); }
-.media--zoom:hover::after{ opacity:1; }
+.media--zoom:hover .media__img{ transform:scale(1.14) translate(-2%, -1.5%); }
 
 /* ── Premium visual systems ───────────────────────────────────── */
 .lux-panel{
