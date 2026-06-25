@@ -158,23 +158,19 @@ p:last-child{ margin-bottom:0; }
 
 /* ── Components: media (frame is inline aspect-ratio per CMS contract) ── */
 .media{ display:block; margin:0; background:var(--color-bg-soft); position:relative; }
-.media::after{ content:none; } /* Overlay aus — Rack-Focus statt Spotlight/Sheen */
+.media::after{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:2;
+  /* Galerie-Rahmen: feine Gold-Passepartout-Linie + weiche Rand-Vignette beim Hover */
+  box-shadow:
+    inset 0 0 0 1px rgba(201,169,106,.78),
+    inset 0 0 60px 10px rgba(8,7,6,.5);
+  opacity:0;
+  transition:opacity .55s var(--ease);
+}
 .media__img{ width:100%; height:100%; transition:transform 1.2s var(--ease); }
 .media--zoom{ overflow:hidden; }
-/* Rack Focus: Bild ruht leicht unscharf + gedämpft und "zieht scharf" beim Hover.
-   Nur Hover-Geräte (Touch hat kein Hover -> Bilder dort immer scharf, kein Dauer-Blur). */
-@media (hover:hover){
-  .media--zoom .media__img{
-    filter:blur(2px) saturate(.85) brightness(.97);
-    transform:scale(1.05);
-    transition:filter .65s var(--ease), transform 1.1s var(--ease);
-  }
-  .media--zoom:hover .media__img{ filter:none; transform:scale(1); }
-  /* Galerie-Kacheln NICHT im Ruhezustand unscharf — Portfolio muss scharf browsbar bleiben
-     (+ Performance: kein Blur auf ~50 Tiles gleichzeitig). Eigener Zoom-Hover bleibt. */
-  .portfolio-tile .media__img{ filter:none; transform:none; }
-  .portfolio-tile:hover .media__img{ transform:scale(1.05); }
-}
+.media--zoom:hover .media__img{ transform:scale(1.03); }
+.media--zoom:hover::after{ opacity:1; }
 
 /* ── Premium visual systems ───────────────────────────────────── */
 .lux-panel{
