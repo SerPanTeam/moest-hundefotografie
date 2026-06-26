@@ -162,13 +162,11 @@ p:last-child{ margin-bottom:0; }
 .media__img{ width:100%; height:100%; transition:transform .6s var(--ease); }
 /* 3D-Tilt + Glanz: Bewegung kommt von vanilla-tilt (JS), das perspective/rotate + eine
    Glare-Schicht aufs Element legt. Container nur fürs 3D vorbereiten. */
-.media--zoom{ overflow:hidden; transform-style:preserve-3d; }
-/* Galerie-Kacheln im Multicolumn-Grid KEIN 3D-Kontext (sonst verschwinden sie in Chromium) */
-.portfolio__grid .media--zoom{ transform-style:flat; }
+.media--zoom{ overflow:hidden; }
 /* Tilt auch auf den prominenten Unterseiten-Fotos (Page-Hero + Lux-Panel-Frames) */
 .page-hero__visual,
-.lux-panel__frame{ transform-style:preserve-3d; overflow:hidden; }
-.js-tilt-glare{ border-radius:inherit; }
+.lux-panel__frame{ overflow:hidden; }
+.js-tilt-glare{ border-radius:inherit; overflow:hidden; }
 
 /* ── Premium visual systems ───────────────────────────────────── */
 .lux-panel{
@@ -344,10 +342,8 @@ p:last-child{ margin-bottom:0; }
   align-items:center;
   padding:clamp(116px,13vh,158px) var(--shell-pad) clamp(76px,10vh,124px);
   background:
-    linear-gradient(180deg, rgba(8,7,6,.70) 0%, rgba(8,7,6,.32) 22%, rgba(8,7,6,.16) 46%, rgba(8,7,6,.42) 74%, rgba(10,9,8,.88) 100%),
-    linear-gradient(90deg, rgba(8,7,6,.78) 0%, rgba(8,7,6,.42) 30%, rgba(8,7,6,.10) 58%, rgba(8,7,6,.04) 100%),
-    radial-gradient(46% 56% at 50% 33%, rgba(201,169,106,.13), transparent 70%),
-    url("../images/hero-home-fineart.webp") center 40% / cover no-repeat,
+    radial-gradient(58% 72% at 30% 32%, rgba(201,169,106,.10), transparent 72%),
+    linear-gradient(180deg, rgba(12,11,10,.22), rgba(9,8,7,.96)),
     var(--color-bg);
   overflow:hidden;
 }
@@ -380,17 +376,22 @@ p:last-child{ margin-bottom:0; }
 .hero__meta span + span::before{ content:""; width:22px; height:1px; background:var(--color-accent); opacity:.5; }
 .hero__actions{ display:flex; flex-wrap:wrap; gap:16px; justify-content:flex-start; margin-top:2.2rem; position:relative; z-index:1; }
 .hero__brand-card{
-  position:absolute; z-index:1;
-  right:clamp(48px,6vw,104px); bottom:clamp(92px,11vh,150px);
-  width:min(720px,50vw);
-  padding:clamp(22px,2.8vw,42px);
+  position:relative; z-index:1;
+  width:min(560px,100%); margin:clamp(26px,4vh,46px) 0 0;
+  padding:clamp(18px,2.4vw,36px);
   border:1px solid rgba(201,169,106,.18);
-  background:rgba(8,7,6,.58);
+  background:rgba(8,7,6,.5);
   box-shadow:0 24px 70px rgba(0,0,0,.32);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
 }
-.hero__brand-logo{ width:100%; height:auto; opacity:.94; }
+.hero__brand-logo{ width:100%; height:auto; opacity:.96; }
+/* Desktop: Hero als 2 Spalten — Text links, Banner rechts (kein Hintergrundfoto) */
+@media (min-width:1025px){
+  .hero{ grid-template-columns:minmax(0,1fr) minmax(0,auto); align-items:center; gap:clamp(48px,5vw,100px); }
+  .hero__content{ max-width:600px; }
+  .hero__brand-card{ margin:0; justify-self:end; width:min(640px,42vw); }
+}
 .hero__brand-card p{
   margin:1rem 0 0;
   color:var(--color-ink-soft);
@@ -920,7 +921,7 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
   .hero__lead{ margin-top:1rem; font-size:clamp(1.08rem,1.7vw,1.32rem); }
   .hero__meta{ margin-top:1rem; }
   .hero__actions{ margin-top:1.2rem; }
-  .hero__brand-card{ width:min(360px,29vw); bottom:clamp(34px,5vh,58px); }
+  .hero__brand-card{ width:min(540px,40vw); }
 }
 
 /* tablet: stack the (now larger) brand-card below the hero copy so it can't overlap the buttons */
