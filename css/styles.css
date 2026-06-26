@@ -210,6 +210,8 @@ p:last-child{ margin-bottom:0; }
 .lux-panel__seal::after{ content:""; width:34px; height:1px; background:var(--color-accent); opacity:.58; }
 /* Signature section only: balance columns (top-align), anchor seal bottom-left to fill the void, lift card text contrast */
 /* #signature "Statement": cards removed, one breathing portrait, gold rationed to heading + dots + seal */
+/* Luft im Panel: Abstand oben (über "Das Atelier") und unten (unter "Fine-Art · Waiblingen") */
+#signature .lux-panel{ padding-block:clamp(44px,5.4vw,76px); }
 #signature .lux-panel__grid{ align-items:start; }
 #signature .lux-panel__copy{ max-width:44ch; }
 #signature .lux-panel__lede{ margin-top:clamp(18px,2vw,26px); max-width:42ch; color:var(--color-ink-soft); }
