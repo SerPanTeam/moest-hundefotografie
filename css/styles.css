@@ -223,9 +223,15 @@ p:last-child{ margin-bottom:0; }
 #signature .lux-panel__foot{ display:flex; flex-direction:column; gap:clamp(22px,2.6vw,34px); margin-top:clamp(30px,3.6vw,48px); }
 #signature .lux-panel__foot .lux-panel__seal{ margin-top:0; }
 #signature .lux-panel__foot .button{ align-self:flex-start; }
-/* Direktor-Wunsch: Eyebrow-Label + Seal einrücken (vom H2-Anker abgesetzt) */
-#signature .lux-panel__copy > .label{ margin-left:clamp(20px,2.2vw,36px); }
-#signature .lux-panel__foot .lux-panel__seal{ margin-left:clamp(20px,2.2vw,36px); }
+/* Editorialer Einzug für ALLE Statement-Panels (lux-panel): Eyebrow-Label + Seal vom H2-Anker
+   abgesetzt — index #signature, leistungen #signature, preise #artwork-value, blog #journal.
+   Nur 2-spaltig (Desktop); einspaltig (<760px) zurückgesetzt, sonst hängt es asymmetrisch. */
+.lux-panel__copy > .label{ margin-left:clamp(20px,2.2vw,36px); }
+.lux-panel__seal{ margin-left:clamp(20px,2.2vw,36px); }
+@media (max-width:759px){
+  .lux-panel__copy > .label,
+  .lux-panel__seal{ margin-left:0; }
+}
 @media (min-width:760px){
   #signature .lux-panel__grid{
     grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
@@ -541,12 +547,12 @@ p:last-child{ margin-bottom:0; }
 .experience__foot{ margin-top:clamp(48px,7vw,90px); display:flex; justify-content:center; }
 
 /* services as detail rows (Leistungen) */
-.service-row{ display:grid; grid-template-columns:1fr; gap:28px; align-items:center; padding-block:clamp(40px,6vw,88px); border-top:1px solid var(--color-line); }
+.service-row{ display:grid; grid-template-columns:1fr; gap:28px; align-items:start; padding-block:clamp(40px,6vw,88px); border-top:1px solid var(--color-line); }
 .service-row:first-of-type{ border-top:0; }
 .service-row__title{ font-family:var(--font-display); font-size:clamp(1.9rem,3.2vw,2.8rem); margin-bottom:1rem; }
 .service-row__price{ margin-top:1.4rem; font-family:var(--font-display); font-style:italic; font-size:1.2rem; color:var(--color-accent); }
 /* "So läuft es ab" journey: slim hairline timeline with gold numerals — deliberately NOT cards (stays distinct from the Signature icon grid) */
-.journey{ list-style:none; margin:clamp(38px,5vw,60px) 0 0; padding:0; display:grid; gap:0; }
+.journey{ list-style:none; margin:clamp(12px,2vw,24px) 0 0; padding:0; display:grid; gap:0; }
 .journey__step{ padding:1.4rem 0; border-top:1px solid var(--color-line); }
 .journey__num{ display:block; font-family:var(--font-ui); font-size:.76rem; font-weight:500; letter-spacing:.24em; color:var(--color-accent); }
 .journey__title{ font-family:var(--font-display); font-weight:400; font-size:clamp(1.2rem,1.7vw,1.5rem); margin:.65rem 0 .35rem; }
@@ -763,7 +769,7 @@ p:last-child{ margin-bottom:0; }
 
 /* ── Section: prices ───────────────────────────────────────────── */
 .prices__grid{ display:grid; grid-template-columns:1fr; gap:clamp(16px,2vw,26px); align-items:stretch; }
-.price-card{ display:flex; flex-direction:column; min-width:0; padding:clamp(26px,2.6vw,38px) clamp(8px,1.5vw,22px); border-top:1px solid var(--color-line); transition:border-color .5s var(--ease); }
+.price-card{ display:flex; flex-direction:column; min-width:0; padding:clamp(26px,2.6vw,38px) clamp(16px,1.5vw,22px); border-top:1px solid var(--color-line); transition:border-color .5s var(--ease); }
 .price-card:hover{ border-top-color:rgba(201,169,106,.5); }
 .price-card--featured{ border-top-color:var(--color-accent); background:linear-gradient(180deg, rgba(201,169,106,.06), transparent 60%); }
 .price-card__name{ font-family:var(--font-display); font-size:1.6rem; }
@@ -854,7 +860,7 @@ p:last-child{ margin-bottom:0; }
   display:grid; gap:1px; margin-top:clamp(22px,3vw,36px);
   border:1px solid var(--color-line-soft); background:var(--color-line-soft);
 }
-.contact-reassurance__item{ background:var(--color-bg); padding:18px; }
+.contact-reassurance__item{ background:var(--color-bg); padding:clamp(16px,2vw,24px); }
 .contact-reassurance__title{ display:block; color:var(--color-accent); font-size:.68rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.4em; }
 .contact-reassurance__text{ color:var(--color-ink-soft); margin:0; font-size:.88rem; }
 .contact__map{ grid-column:1 / -1; }
@@ -1038,9 +1044,9 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
     position:static; left:auto; bottom:auto;
     width:100%; margin-top:clamp(14px,1.8vw,22px);
   }
-  .section--artwork{ padding-block:clamp(92px,12vw,178px); }
+  .section--artwork{ padding-block:clamp(72px,10vw,150px); }
   .blog__grid{ grid-template-columns:repeat(3,1fr); }
-  .service-row{ grid-template-columns:1fr 1fr; gap:clamp(30px,5vw,80px); }
+  .service-row{ grid-template-columns:1fr 1fr; gap:clamp(30px,4vw,60px); }
   .service-row--reverse .service-row__body{ order:2; }
   /* .contact & .contact-cta bleiben auf Tablet 1-spaltig; 2-spaltig erst ≥1024 —
      verhindert 768-Overflow (contact-cta) und die zu schmale 141px-Kontaktspalte (kontakt) */
@@ -1062,9 +1068,9 @@ html.js [data-reveal].portfolio-tile:not(.is-visible){ transform:none; }
 }
 @media (min-width:1024px){
   .prices__grid{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-  .contact{ grid-template-columns:1.1fr .9fr; }
+  .contact{ grid-template-columns:1.25fr .75fr; }
   .contact-cta{ grid-template-columns:minmax(0,1fr) minmax(340px,.8fr); }
-  .experience__grid{ max-width:1180px; margin-inline:auto; gap:clamp(64px,7vw,104px); }
+  .experience__grid{ margin-inline:auto; gap:clamp(64px,7vw,104px); }
   /* CHECKERBOARD — image + text peers in ONE row, alternating L/R, both halves filled.
      Caption is TOP-anchored (align-items:start) so a short caption never floats in
      the tall 3:2 column. Mass comes from the gold number + hairline, not centering. */
