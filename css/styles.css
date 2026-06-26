@@ -223,6 +223,9 @@ p:last-child{ margin-bottom:0; }
 #signature .lux-panel__foot{ display:flex; flex-direction:column; gap:clamp(22px,2.6vw,34px); margin-top:clamp(30px,3.6vw,48px); }
 #signature .lux-panel__foot .lux-panel__seal{ margin-top:0; }
 #signature .lux-panel__foot .button{ align-self:flex-start; }
+/* Direktor-Wunsch: Eyebrow-Label + Seal einrücken (vom H2-Anker abgesetzt) */
+#signature .lux-panel__copy > .label{ margin-left:clamp(20px,2.2vw,36px); }
+#signature .lux-panel__foot .lux-panel__seal{ margin-left:clamp(20px,2.2vw,36px); }
 @media (min-width:760px){
   #signature .lux-panel__grid{
     grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
@@ -386,11 +389,13 @@ p:last-child{ margin-bottom:0; }
   -webkit-backdrop-filter:blur(8px);
 }
 .hero__brand-logo{ width:100%; height:auto; opacity:.96; }
-/* Desktop: Hero als 2 Spalten — Text links, Banner rechts (kein Hintergrundfoto) */
+/* Desktop: Hero als 2 Spalten — Text links, Banner rechts (kein Hintergrundfoto).
+   Gruppe zentriert auf ~Shell-Breite, damit auf breiten Screens kein großer Leerraum
+   in der Mitte entsteht. */
 @media (min-width:1025px){
-  .hero{ grid-template-columns:minmax(0,1fr) minmax(0,auto); align-items:center; gap:clamp(48px,5vw,100px); }
-  .hero__content{ max-width:600px; }
-  .hero__brand-card{ margin:0; justify-self:end; width:min(640px,42vw); }
+  .hero{ grid-template-columns:minmax(0,580px) minmax(0,600px); justify-content:center; align-items:center; gap:clamp(56px,5vw,96px); }
+  .hero__content{ max-width:580px; }
+  .hero__brand-card{ margin:0; width:100%; }
 }
 .hero__brand-card p{
   margin:1rem 0 0;
